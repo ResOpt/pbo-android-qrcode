@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bg2"
+    >
+    <include layout="@layout/navbar" android:id="@+id/navbar"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img"
+        app:layout_goneMarginTop="100dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Link"
+            android:background="@color/white"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="32dp"
+        android:text="Generate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="330dp"
+        android:layout_height="292dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        android:src="@android:color/transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/navbar"
+        tools:srcCompat="@android:color/transparent" />
+
+    <RelativeLayout
+        android:id="@+id/colorPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button">
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/buttonBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Default" />
+
+            <RadioButton
+                android:id="@+id/buttonRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/buttonBlack"
+                android:text="Red" />
+
+            <RadioButton
+                android:id="@+id/buttonYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/buttonRed"
+                android:text="Yellow" />
+
+            <RadioButton
+                android:id="@+id/buttonGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/buttonYellow"
+                android:text="Green" />
+        </RadioGroup>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/colorPicker"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="textMultiLine"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Save"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/desc"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">QrCodeGenerator</string>
+    <string-array name="color">
+        <item>Default</item>
+        <item>Merah</item>
+        <item>Hitam</item>
+        <item>Biru</item>
+        <item>Ungu</item>
+        <item>Hijau</item>
+        <item>Kuning</item>
+    </string-array>
+</resources>
